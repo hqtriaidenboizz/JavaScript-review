@@ -394,6 +394,50 @@ console.log(fruits56.toString()); // Output: "apple,banana,orange"
 
 // 10 OBJECT METHODS
 
+// 1 Object.keys() 
+const person1 = {
+    name: 'tri',
+    age: 22,
+    city: 'da nang'
+  };
+  
+  const keys = Object.keys(person1);
+  console.log(keys); // Output: ["name", "age", "city"]
+
+// Object.values()
+  const values = Object.values(person1);
+  console.log(values); // Output: ["tri", 22, "da nang"]
+
+// Object.entries()
+const entries = Object.entries(person1);
+console.log(entries); // Output: [["name", "tri"], ["age", 22], ["city", "da nang"]]
+
+// Object.assign()
+const object1 = { a: 1, b: 2 };
+const object2 = { b: 4, c: 5 };
+const result4 = Object.assign(object1, object2);
+console.log(result4); // Output: { a: 1, b: 4, c: 5 }
+
+//  Object.freeze()
+Object.freeze(person1);
+person1.age = 25 // không thể thay đổi
+console.log(person1); // Output: { name: 'tri', age: 22 }
+
+// Object.seal()
+Object.seal(person1);
+person1.age = 25; // thay đổi được
+person1.school = 'PNV'; // không thêm được
+console.log(person1); // Output: { name: 'tri', age: 25; city: 'da nang' }
+  
+
+  
+  
+
+
+
+
+
+
 
 
 
