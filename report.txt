@@ -1,0 +1,151 @@
+### 1: Ưu Nhược điểm của các Array Methods.
+
+1. **Thêm và Loại bỏ Phần tử:**
+    - **`push()`**: Thêm một hoặc nhiều phần tử vào cuối mảng.
+        - **Ưu điểm**: Không làm thay đổi vị trí của các phần tử khác.
+        - **Nhược điểm**: Không thể thêm vào những vị trí khác.
+    - **`pop()`**: Loại bỏ phần tử cuối cùng của mảng.
+        - **Ưu điểm**: Không làm thay đổi vị trí của các phần tử khác.
+        - **Nhược điểm**: Chỉ loại bỏ được những phần tử cuối mảng.
+    - **`shift()`**: Loại bỏ phần tử đầu tiên của mảng.
+        - **Ưu điểm**:
+            - Dễ loại bỏ phần tử đầu tiên của mảng.
+            - Các chỉ số của các phần tử còn lại trong mảng sẽ được cập nhật.
+        - **Nhược điểm**:
+            - Làm ảnh hưởng đến các vị trí của phần tử còn lại, không hiệu quả với các mảng lớn. Do các phần tử dịch chuyển phải thảy đổi toàn bộ chỉ mục của mảng.
+            - Làm thay đổi mảng ban đầu nếu dùng để tạo 1 mảng mới từ với các phần tử loại bỏ. Nên dùng `slice()` hoặc `filter()`
+    - **`unshift()`**: Thêm một hoặc nhiều phần tử vào đầu mảng.
+        - **Ưu điểm**:
+            - Dễ thêm phần tử đầu tiên của mảng.
+            - Các chỉ số của các phần tử còn lại trong mảng sẽ được cập nhật.
+        - **Nhược điểm:** Làm ảnh hưởng đến các vị trí của phần tử còn lại, không hiệu quả với các mảng lớn. Do các phần tử dịch chuyển phải thảy đổi toàn bộ chỉ mục của mảng.
+    - **`splice()`**: Thay đổi nội dung của mảng bằng cách loại bỏ hoặc thêm phần tử.
+        - **Ưu điểm:** Cho phép thêm, loại bỏ, hoặc thay đổi ở bất kỳ vị trí nào trong mảng.
+        - **Nhược điểm:** Thay đổi giá trị và cấu trúc của mảng, ảnh hưởng đến vị trí của các phần tử còn lại của mảng.
+2. **Truy cập Phần tử:**
+    - `**at()**`: Trả về phần tử với giá trị index truyền vào.
+        - **Ưu điểm:**
+            - Cho phép truy cập vào các phần tử của mảng dựa vào index đầu vào
+            - Nhận vào các số âm để truy cập phần tử từ cuối mảng đến đầu mảng.
+    - **`concat()`**: Kết hợp hai hoặc nhiều mảng để tạo một mảng mới.
+        - **Ưu điểm**: Dễ dàng kết hợp 2 hoặc nhiều mảng lại với nhau mà không làm ảnh hưởng đến các mảng ban đầu.
+        - **Nhược điểm**: Tạo một mảng mới làm tăng bộ nhớ.
+    - **`slice()`**: Trích xuất một phần của mảng và tạo một mảng mới từ đó.
+        - **Ưu điểm:** dễ dàng  trích xuất và tạo ra một mảng mới theo một khoản chỉ định ban đầu.
+        - **Nhược điểm:** Tạo ra một mảng mới làm tăng bộ nhớ.
+    - **`indexOf()`**: Trả về chỉ số của phần tử đầu tiên trong mảng.
+        - **Ưu điểm:** Trả về vị trí của phần tử đầu tiên thỏa mảng với giá trị đầu vào
+        - **Nhược điểm:** Chỉ trả về một vị trí của một phần tử đúng**.**
+    - **`lastIndexOf()`**: Trả về chỉ số của phần tử cuối cùng trong mảng.
+        - **Ưu điểm:** Tương tự `indexof()` nhưng trả về vị trí cuối cùng của phần tử thỏa mảng giá trị đầu vào.
+        - **Nhược điểm:** Chỉ trả về một vị trí của phần tử thỏa mảng
+3. **Lặp qua Mảng:**
+    - **`forEach()`**: Thực hiện một hàm cho mỗi phần tử trong mảng.
+        - **Ưu điểm:**
+            - Lặp qua từng phần tử của mảng và thực hiện hành động cho mỗi phần tử.
+            - Không tạo ra mảng mới.
+        - **Nhược điểm:** Không thể dùng **break**, **continue** hoặc **return** để dừng vòng lặp, hoặc bỏ qua một lượt lặp.
+    - **`map()`**: Tạo một mảng mới bằng cách thực hiện một hàm cho mỗi phần tử trong mảng.
+        - **Ưu điểm:** Không làm ảnh hưởng đến mảng cũ, tạo một mảng bằng cách thực hiện một hàm cho mỗi phần tử trong mảng có cùng độ dài như mảng ban đầu.
+        - **Nhược điểm:** Tạo ra một mảng mới, không phù hợp với những biến đổi phức tạp cần truy cập vào vị trí (index) của phần tử trong mảng.
+    - **`filter()`**: Tạo một mảng mới chỉ chứa các phần tử thỏa mãn một điều kiện.
+        - **Ưu điểm:** Không làm thay đổi mảng gốc, tạo ra mảng mới với các phần tử đã thõa mảng điều kiện từ mảng gốc.
+        - **Nhược điểm:**
+            - Không cho phép truy cập vào vị trị (index ) của phần tử trong mảng để thực hiện các biến đổi phúc tạp
+            - Tạo ra mảng mới làm ảnh hưởng đến hiệu suất và bộ nhớ.
+    - **`find()`**: Tìm phần tử đầu tiên thỏa mãn với điều kiện.
+        - **Ưu điểm:** Dễ dàng tìm kiếm và trả về phần tử đầu tiên, có thể áp dụng nhiều loại điều kiện để tìm kiếm.
+        - **Nhược điểm:**
+            - Chỉ trả về phần tử đầu tiên nếu muốn tìm tất cả thì nên dùng `filter()`
+            - Tốn thời gian với mảng lớn và nếu kết quả cần tìm nằm ở cuối mảng
+    - **`reduce()`**: Biến đổi một mảng thành một giá trị duy nhất từ các giá trị của mảng.
+        - **Ưu điểm:**
+            - Là hàm linh hoạt cho phép thực hiện nhiều phép tổng hợp giá trị khác nhau như tính tổng, tích, tìm max, min, ghép các phần tử lại…
+        - **Nhược điểm:** chú ý với việc truyền inital value
+4. **Kiểm tra và Sắp xếp:**
+    - **`every()`**: Kiểm tra xem tất cả các phần tử có thỏa mãn một điều kiện không.
+        - **Ưu điểm:**
+            - Nếu có một phần tử không thỏa mãn sẽ dừng việc kiểm tra và trả về **false,** giúp tối ưu hiệu suất.
+            - Không làm thay đổi mảng hiện tại
+        - **Nhược điểm:** Việc dừng lại khi thỏa mãn một điều kiện có thể dẫn đến sai kết quả nếu dùng không đúng trường hợp
+    - **`some()`**: Kiểm tra xem ít nhất một phần tử có thỏa mãn một điều kiện không.
+        - **Ưu điểm:**
+            - Dừng lại ngay khi gặp phần tử thỏa mãn điều kiện, không cần kiểm tra các phần tử tiếp theo. Giúp tôi ưu hóa hiệu suất
+            - Không làm thay đổi mảng hiện tại
+        - **Nhược điểm:**
+    - **`sort()`**: Sắp xếp các phần tử của mảng.
+        - Ưu điểm: phù hợp cho nhiều loại dữ liệu
+        - Nhược điểm:
+            - Làm thay đổi mảng ban đầu
+            - Mặc định sắp xếp theo thứ tự Unicode của các chuỗi.
+            - Cần truyền một hàm so sánh để sắp xếp theo thứ tự mong muốn.
+    - **`reverse()`**: Đảo ngược thứ tự các phần tử trong mảng.
+        - Ưu điểm: Thực hiện ngay chính mảng ban đầu, không tạo ra mảng mới.
+        - Nhược điểm: Làm thay đổi mảng ban đầu
+5. **Xác định Thông tin:**
+    - **`length`**: Trả về độ dài của mảng.
+    - **`isArray()`**: Kiểm tra xem một biến có phải là mảng không.
+6. **Chuyển đổi Mảng:**
+    - **`toString()`**: Chuyển đổi mảng thành một chuỗi.
+
+### 2: So sánh các hàm tương tự nhau.
+
+1: **forEach() và map():**
+
+**Giống**: 
+
+- Đều thực hiện hàm callback lên từng phần tử trong mảng.
+- Không hỗ trợ **break** và **continue.**
+
+**Khác**:
+
+- **forEach**:
+    - Không trả về mảng mới chỉ lặp qua mảng và thực hiện hành động với phần tử.
+    - return về “undefined”
+    
+    ⇒ Nên sử dụng khi chỉ muốn lặp qua mảng và thực hiện hành động nào đó mà không cần tạo ra mảng mới
+    
+- **map**:
+    - Không làm thay đổi mảng ban đầu
+    - Trả về một mảng mới dựa trên kết quả đã xử lý.
+    - Có thể kết hợp với reduce(),sort(), filter()…
+    
+    ⇒  Nên sử dụng khi muốn biến đổi mỗi đỗi mỗi phần tử của mảng và tạo ra mảng mới.
+    
+
+2: **find() và filter():**
+
+**Giống:** Dùng để tìm kiếm và không làm thay đổi mảng ban đầu
+
+**Khác:**
+
+- **find:**
+    - Trả về “underfined” nếu không tìm thấy
+    - Trả về phần tử đầu tiên nếu tìm thấy kết quả thõa mãn điều kiện
+    - Dừng nay khi tìm thấy kết quả đầu tiên không quan tâm đến các phần tử còn lại của mảng
+    
+    ⇒ Sử dụng khi quan tâm đến phần tử đầu tiên thỏa mãn điều kiện
+    
+- **filter:**
+    - Trả về một mảng chứa tất cả các phần tử thỏa mãn điều kiện
+    - Gọi callback cho tất cả các phần tử trong mảng, và tạo ra mảng mới chứa các phần tử thõa mãn.
+    - Trả về mảng rổng “[]” nếu không tìm thấy kết quả
+    
+    ⇒ Sử dụng để tìm tất cả các phần tử thỏa mãn điều kiện
+    
+
+3 **every() và some()**
+
+**Giống:** 
+
+- Trả về giá trị true hoặc false sau khi kiểm tra.
+- Không thực thi hàm cho các phần tử mảng trống.
+
+**Khác**
+
+- **every:**
+    - Được sử dụng để kiểm tra xem tất cả các phần tử của mảng có thỏa mãn điều kiện đã cho hay không.
+    - Dừng ngay khi tìm thấy phần tử không thỏa mãn điều kiện và trả về **`false`**.
+- **Some:**
+    - Được sử dụng để kiểm tra xem ít nhất một trong các phần tử của mảng có thỏa mãn điều kiện đã cho hay không.
+    - Dừng ngay khi tìm thấy phần tử thỏa mãn điều kiện và trả về **`true`**.
